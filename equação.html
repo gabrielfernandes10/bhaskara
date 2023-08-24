@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resolva Equações de Segundo Grau</title>
+  <style>
+    body {
+      background-color: rgb(43, 108, 238);
+      text-align: center;
+      font-size: 24px;
+    }
+    
+    #logo {
+      float: right;
+      margin-right: 20px;
+    }
+  </style>
+  <script>
+    function calcular() {
+      var a = parseFloat(document.getElementById('coeficiente-a').value);
+      var b = parseFloat(document.getElementById('coeficiente-b').value);
+      var c = parseFloat(document.getElementById('coeficiente-c').value);
+
+      var delta = Math.pow(b, 2) - (4 * a * c);
+      var x1, x2;
+
+      if (delta > 0) {
+        x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        x2 = (-b - Math.sqrt(delta)) / (2 * a);
+        document.getElementById('resultado').innerHTML = "x1 = " + x1 + ", x2 = " + x2;
+      } else if (delta === 0) {
+        x1 = -b / (2 * a);
+        document.getElementById('resultado').innerHTML = "x1 = x2 = " + x1;
+      } else {
+        document.getElementById('resultado').innerHTML = "Não há soluções reais.";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Resolva Equações de Segundo Grau</h1>
+  <div id="logo">
+    <img src="https://pbs.twimg.com/profile_images/1109378091/Logo_Oficial_de_P_.jpg" alt="Símbolo do Colégio João XXIII">
+  </div>
+  <p>Insira os coeficientes da equação:</p>
+  <label for="coeficiente-a">Coeficiente a:</label>
+  <input type="number" id="coeficiente-a">
+  <br>
+  <label for="coeficiente-b">Coeficiente b:</label>
+  <input type="number" id="coeficiente-b">
+  <br>
+  <label for="coeficiente-c">Coeficiente c:</label>
+  <input type="number" id="coeficiente-c">
+  <br>
+  <button onclick="calcular()">Calcular</button>
+  <br>
+  <p id="resultado"></p>
+  <p style="font-size: 30px;">Criado por Gustavo Falcão e Gabriel Fernandes 2G</p>
+</body>
+</html>
+
+
